@@ -24,7 +24,7 @@ const SearchResultsElement = ({movie, addNomination, nominations}) => {
 
     return (
         <div>
-            {movie.Title} {movie.Year}
+            {movie.Title} ({movie.Year})
             <button className='btn' onClick={add} disabled={disableBtn()}>NOMINATE</button>
         </div>
     )
