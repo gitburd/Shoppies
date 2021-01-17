@@ -42,7 +42,7 @@ const SearchBar = ({msg, searchMovies}) => {
 
 const mapStateToProps = (state) => {
     return {
-        msg: state.msg
+       
     }
 }
 

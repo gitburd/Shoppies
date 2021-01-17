@@ -4,21 +4,28 @@ import Nominations from './Nominations'
 import SearchBar from './SearchBar'
 import SearchResults from './SearchResults'
 
-const Dashboard = ({msg}) => {
+const Dashboard = ({searchResults}) => {
     return (
         <div>
-            <h1>Shoppies!</h1>
-            <p>{msg}</p>
-            <Nominations/>
-            <SearchBar/>
-            <SearchResults/>
+            <header>
+                <h1>The Shoppies!</h1>
+            </header>
+            <main>
+                <section>
+                    <SearchBar/>
+                    <SearchResults/>
+                </section>
+                <section>
+                    <Nominations/>
+                </section>
+            </main>
         </div>
     )
 }
 
 const mapStateToProps = (state) => {
     return {
-        msg: state.msg
+        searchResults: state.searchResults
     }
 }
 

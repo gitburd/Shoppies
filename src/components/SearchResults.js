@@ -1,17 +1,26 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import SearchResultsElement from './SearchResultsElement'
 
-const SearchResults = ({msg}) => {
+const SearchResults = ({searchResults, searchText}) => {
+    console.log('sup?', searchResults)
     return (
         <div>
-            <h1>Search Results</h1>
+            {!searchText && <h2>Search for movies to nominate!</h2>}
+            {searchText && <h2>Results for "{searchText}"</h2>}
+            {searchResults && searchResults.length > 0 && (
+                searchResults.map((movie, idx) => 
+                    <SearchResultsElement key={idx} movie={movie}/>
+                )
+            )}
         </div>
     )
 }
 
 const mapStateToProps = (state) => {
     return {
-        msg: state.msg
+        searchResults: state.searchResults,
+        searchText: state.searchText
     }
 }
 

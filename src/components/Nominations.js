@@ -1,17 +1,28 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
-const Nominations = ({msg}) => {
+import NominationsElement from './NominationsElement'
+const Nominations = ({nominations}) => {
+    
     return (
         <div>
-            <h1>Nominations</h1>
+            <h2>Nominations</h2>
+            {nominations && nominations.length === 5 &&
+                <>
+                <p>Great Choices!</p>
+                <p>5 Nominations is the limit. Remove a title to add another.</p>
+                </>
+            }
+            {nominations && nominations.length > 0 &&
+            nominations.map((movie,idx) => 
+                <NominationsElement movie={movie} key={idx}/>
+            )}
         </div>
     )
 }
 
 const mapStateToProps = (state) => {
     return {
-        msg: state.msg
+        nominations: state.nominations
     }
 }
 

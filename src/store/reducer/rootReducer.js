@@ -1,5 +1,5 @@
 const initState = {
-    msg: 'root reducer connected!'
+   nominations:[]
 }
 
 const rootReducer = (state = initState, action) => {
@@ -8,8 +8,22 @@ const rootReducer = (state = initState, action) => {
             console.log('reducer', action.movies)
             return {
                 ...state,
-                searchResults: action.movies
+                searchResults: action.movies,
+                searchText: action.searchText
             }
+        case "ADD_NOMINATION":
+            console.log('ADD', action.movie)
+            return {
+                ...state,
+                nominations: [...state.nominations, action.movie]
+            }
+        case "REMOVE_NOMINATION":
+        console.log('reducer', action.movie)
+        const filteredNominations = state.nominations.filter(movie => {return movie.Title !== action.movie.Title})
+        return {
+            ...state,
+            nominations: filteredNominations
+        }
         default :
             return state;
     }
