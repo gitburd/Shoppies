@@ -1,18 +1,18 @@
 :root {
   --dark-color: #034D3E;
-  --accent-color: #0A8060;
+  --accent-color: #00855D;
   --light-color: #f4f4f4;
 }
 
 body{
   padding: 0;
   margin: 0;
+  width:100vw;
 }
 
 main{
   display: grid;
   grid-template-columns: auto auto;
-  padding: 10px;
 }
 
 header{
@@ -25,8 +25,8 @@ header{
 
 section{
   padding:20px;
+  margin:30px 20px;
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.25);
-  margin:20px;
 }
 
 h2{
@@ -51,6 +51,7 @@ input:focus, button:focus { outline:none; }
   margin: 0 5px;
   background: var(--accent-color);
   color: #fff;
+  padding:2px 5px;
 }
 
 .btn:disabled{
@@ -58,13 +59,16 @@ input:focus, button:focus { outline:none; }
 }
 
 .btn:disabled:hover{
-  cursor: text;
+  cursor: default;
+  opacity: .40;
+  background: var(--accent-color);
 }
 
 .btn-accent{
   background: var(--accent-color);
   color: #fff;
   font-size: 16px;
+  border: 1px solid black;
 }
 
 .btn:hover, .btn-accent:hover{
@@ -73,22 +77,22 @@ input:focus, button:focus { outline:none; }
 }
 
 li{
-  padding:5px;
+  padding:8px;
 }
 
 .banner{
   background-color: var(--accent-color);
   text-align: center;
   color:white;
-  font-size: 20px;
-
+  font-size: 24px;
 }
 
 .thumbnail{
-  width:120px;
-  height:150px;
+  width:98%;
+  height:230px;
   overflow: hidden;
   object-fit: cover;
+  margin: 10px auto;
 }
 
 .thumbnails{

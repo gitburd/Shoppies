@@ -12,12 +12,12 @@ const Dashboard = ({searchResults}) => {
             </header>
             <main>
                 <section>
-                    <SearchBar/>
-                    <SearchResults/>
-                </section>
-                <section>
                     <Nominations/>
                 </section>
+                <section>
+                    <SearchBar/>
+                    <SearchResults/>
+                </section>               
             </main>
         </div>
     )
