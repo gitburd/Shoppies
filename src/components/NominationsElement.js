@@ -12,7 +12,7 @@ const NominationsElement = ({movie, removeNomination}) => {
     return (
         <div>
             {movie.Title} {movie.Year}
-            <button onClick={remove}>REMOVE</button>
+            <button className='btn' onClick={remove}>REMOVE</button>
         </div>
     )
 }

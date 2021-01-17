@@ -8,7 +8,7 @@ const Dashboard = ({searchResults}) => {
     return (
         <div>
             <header>
-                <h1>The Shoppies!</h1>
+                <h1>The Shoppies</h1>
             </header>
             <main>
                 <section>

@@ -25,18 +25,20 @@ const SearchBar = ({msg, searchMovies}) => {
     }
 
     return (
-        <form onSubmit={onSubmit}>
-            <input
-                type="text"
-                name="text"
-                placeholder="Search movies..."
-                value={searchText}
-                required
-                onChange={onChange}
-                onKeyUp={onChange}
-            />
-            <button type="submit"> Search </button>
-        </form>
+        <div>
+            <form onSubmit={onSubmit} className="searchbar">
+                <input
+                    type="text"
+                    name="text"
+                    placeholder="Search movies..."
+                    value={searchText}
+                    required
+                    onChange={onChange}
+                    onKeyUp={onChange}
+                />
+                <button type="submit" className='btn-accent'> Search </button>
+            </form>
+        </div>
     )
 }
 

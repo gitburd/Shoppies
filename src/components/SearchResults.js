@@ -8,11 +8,15 @@ const SearchResults = ({searchResults, searchText}) => {
         <div>
             {!searchText && <h2>Search for movies to nominate!</h2>}
             {searchText && <h2>Results for "{searchText}"</h2>}
+            <ul>
             {searchResults && searchResults.length > 0 && (
                 searchResults.map((movie, idx) => 
+                <li>
                     <SearchResultsElement key={idx} movie={movie}/>
+                </li>
                 )
             )}
+            </ul>
         </div>
     )
 }
