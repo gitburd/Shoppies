@@ -2,26 +2,21 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import { searchMovies } from '../store/actions/actions'
 
-const SearchBar = ({msg, searchMovies}) => {
+const SearchBar = ({searchMovies}) => {
  
     const [searchText,setSearchText] = useState('')
 
     const onChange = e => {
         if(e.keyCode === 13) {
-            console.log(searchText, 'submit')
-            searchMovies(searchText)
-            setSearchText('')
+            searchMovies(searchText);
         } else {
             setSearchText(e.target.value);
-            console.log('change', searchText);
         }
     }
 
     const onSubmit = e => {
         e.preventDefault();
-        searchMovies(searchText)
-        console.log(searchText, 'submit')
-        setSearchText('');
+        searchMovies(searchText);
     }
 
     return (
@@ -42,11 +37,6 @@ const SearchBar = ({msg, searchMovies}) => {
     )
 }
 
-const mapStateToProps = (state) => {
-    return {
-       
-    }
-}
 
 const mapDispatchToProps = (dispatch) => {
     return{
@@ -54,4 +44,4 @@ const mapDispatchToProps = (dispatch) => {
     }
   }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
+export default connect(null, mapDispatchToProps)(SearchBar);

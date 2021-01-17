@@ -11,8 +11,8 @@ const SearchResults = ({searchResults, searchText}) => {
             <ul>
             {searchResults && searchResults.length > 0 && (
                 searchResults.map((movie, idx) => 
-                <li>
-                    <SearchResultsElement key={idx} movie={movie}/>
+                <li key={idx}>
+                    <SearchResultsElement movie={movie}/>
                 </li>
                 )
             )}

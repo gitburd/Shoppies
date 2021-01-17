@@ -22,7 +22,7 @@ const rootReducer = (state = initState, action) => {
             }
         case "REMOVE_NOMINATION":
         console.log('reducer', action.movie)
-        const filteredNominations = state.nominations.filter(movie => {return movie.Title !== action.movie.Title})
+        const filteredNominations = state.nominations.filter(movie => {return movie.imdbID !== action.movie.imdbID})
         return {
             ...state,
             nominations: filteredNominations

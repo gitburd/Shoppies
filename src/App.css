@@ -45,7 +45,6 @@ input:focus, button:focus { outline:none; }
   display: grid;
   grid-template-columns: auto 100px;
   padding: 10px;
-
 }
 
 .btn {
@@ -62,13 +61,13 @@ input:focus, button:focus { outline:none; }
   cursor: text;
 }
 
-.btn-accent {
+.btn-accent{
   background: var(--accent-color);
   color: #fff;
   font-size: 16px;
 }
 
-.btn, .btn-accent :hover{
+.btn:hover, .btn-accent :hover{
   cursor: pointer;
   background: var(--dark-color);
 }
@@ -83,4 +82,44 @@ li{
   color:white;
   font-size: 20px;
 
+}
+
+.thumbnail{
+  width:120px;
+  height:150px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.thumbnails{
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+}
+
+@media screen and (max-width: 1250px) {
+  .thumbnails {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  main{
+    display: grid;
+    grid-template-columns: auto;
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .thumbnails {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  .thumbnail{
+    width:120px;
+    height:150px;
+    overflow: hidden;
+    object-fit: cover;
+  }
 }

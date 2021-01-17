@@ -10,19 +10,30 @@ const Nominations = ({nominations}) => {
                 <div className='banner'>
                     <p>Great Choices!
                     <br/>
-                    5 Nominees is the limit.</p>
+                    5 Nominees is the limit</p>
                 </div>
             }
             {nominations && nominations.length > 0 &&
             <ol>
                 {nominations.map((movie,idx) => 
-                    <li>
-                        <NominationsElement movie={movie} key={idx}/>
+                    <li key={idx}>
+                        <NominationsElement movie={movie}/>
                     </li>
                 )}    
             </ol>
             
             }
+            <div className='thumbnails'>
+            {nominations && nominations.length > 0 &&
+                nominations.map((movie,idx) => 
+                   <>
+                       {movie.Poster !== "N/A" && 
+                        <img className="thumbnail" src={movie.Poster} />
+                       }
+                    </>                    
+                )
+            }
+            </div>
         </div>
     )
 }
