@@ -1,3 +1,6 @@
+import storage from 'redux-persist/lib/storage';
+import { persistReducer } from 'redux-persist';
+
 const initState = {
    nominations:[]
 }
@@ -29,4 +32,9 @@ const rootReducer = (state = initState, action) => {
     }
 }
 
-export default rootReducer;
+const persistConfig = {
+    key: 'root',
+    storage: storage
+};
+
+export default persistReducer(persistConfig,rootReducer);
