@@ -67,7 +67,7 @@ input:focus, button:focus { outline:none; }
   font-size: 16px;
 }
 
-.btn:hover, .btn-accent :hover{
+.btn:hover, .btn-accent:hover{
   cursor: pointer;
   background: var(--dark-color);
 }
