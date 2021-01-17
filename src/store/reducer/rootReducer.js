@@ -3,7 +3,16 @@ const initState = {
 }
 
 const rootReducer = (state = initState, action) => {
-    return state;
+    switch(action.type){
+        case "SEARCH_MOVIES":
+            console.log('reducer', action.movies)
+            return {
+                ...state,
+                searchResults: action.movies
+            }
+        default :
+            return state;
+    }
 }
 
 export default rootReducer;
